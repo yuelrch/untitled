@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="myCss/cart.css"/>
+    <link rel="stylesheet" href="myCss/toast.css"/>
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script src="jquery.loadTemplate-1.5.0.min.js"></script>
+    <script type="text/javascript" src="myJs/toast.js"></script>
+    <title>购物车</title>
+</head>
+<body style="width: 100%;margin: 0 auto">
+    <div class="cart_top">
+        <a class="cart_top_left"><img src="images/icon_back.png"></a>
+        <div class="cart_top_center">购物车</div>
+        <div class="cart_top_right">清空</div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="cart_content" id="cart_store_list">
+
+        <div>到底了</div>
+    </div>
+
+    <div class="cart_foot">
+        <div class="cart_foot_check"><input type="checkbox"><label>全选</label></div>
+        <div class="cart_foot_zj">总价：<span>0</span>元</div>
+        <input class="cart_foot_btn" type="button" value="去结账">
+    </div>
+    <div id="toastId2" class="toasttj2" ></div>
+    <script type="text/javascript">
+        function testTpl(){
+            var params = [
+                {
+                    store_id:1,
+                    store_name:"大头丸子微商铺",
+                    goods_list:[
+                        {
+                            goods_img:"http://pic2.sc.chinaz.com/Files/pic/pic9/201506/apic12106_s.jpg",
+                            goods_name:"正宗马来西亚进口零食",
+                            goods_price:"249.00",
+                            goods_color:"多种口味",
+                            goods_cm:"均码",
+                            goods_sy:"5"
+                        },
+                        {
+                            goods_img:"http://pic2.sc.chinaz.com/Files/pic/pic9/201509/apic14551_s.jpg",
+                            goods_name:"正宗马来西亚进口零食",
+                            goods_price:"249.00",
+                            goods_color:"多种口味",
+                            goods_cm:"均码",
+                            goods_sy:"5"
+                        },
+                        {
+                            goods_img:"http://pic1.sc.chinaz.com/Files/pic/pic9/201502/apic9388_s.jpg",
+                            goods_name:"正宗马来西亚进口零食",
+                            goods_price:"249.00",
+                            goods_color:"多种口味",
+                            goods_cm:"均码",
+                            goods_sy:"5"
+                        },
+                        {
+                            goods_img:"http://pic1.sc.chinaz.com/Files/pic/pic9/201410/apic7029_s.jpg",
+                            goods_name:"正宗马来西亚进口零食",
+                            goods_price:"249.00",
+                            goods_color:"多种口味",
+                            goods_cm:"均码",
+                            goods_sy:"5"
+                        },
+                        {
+                            goods_img:"http://pic2.sc.chinaz.com/Files/pic/pic9/201508/apic13867_s.jpg",
+                            goods_name:"正宗马来西亚进口零食",
+                            goods_price:"249.00",
+                            goods_color:"多种口味",
+                            goods_cm:"均码",
+                            goods_sy:"5"
+                        }
+                    ]
+                },
+                {
+                    store_id:2,
+                    store_name:"我的店铺",
+                    goods_list:[
+                        {
+                            goods_img:"http://pic2.sc.chinaz.com/Files/pic/pic9/201506/apic12106_s.jpg",
+                            goods_name:"正宗马来西亚进口零食",
+                            goods_price:"249.00",
+                            goods_color:"多种口味",
+                            goods_cm:"均码",
+                            goods_sy:"5"
+                        },
+                        {
+                            goods_img:"http://pic2.sc.chinaz.com/Files/pic/pic9/201509/apic14551_s.jpg",
+                            goods_name:"正宗马来西亚进口零食",
+                            goods_price:"249.00",
+                            goods_color:"多种口味",
+                            goods_cm:"均码",
+                            goods_sy:"15"
+                        }
+                    ]
+                }
+            ];
+
+            for (var k = 0;k<params.length;k++){
+                var storeId = params[k].store_id;
+                params[k].cart_store_item = "cart_store_item_"+storeId;
+                params[k].cart_store_id = "cart_store_id_"+storeId;
+                params[k].cart_store_del = "cart_store_del_"+storeId;
+            }
+            $("#cart_store_list").loadTemplate("cart_store.tpl",params ,{
+                "success" : function () {init_actions();}
+            });
+            for(var k = 0;k<params.length;k++){
+                var goodsList  = params[k].goods_list;
+                $("#"+params[k].cart_store_item).loadTemplate("cart_store_goods.tpl",goodsList);
+            }
+        }
+        function init_actions() {
+            $("img[id^='cart_store_del_']").click(function () {
+               var storeId = this.id.substr(15);
+                $("#cart_store_item_"+storeId).de
+            });
+        }
+        $(document).ready(function () {
+          testTpl();
+        });
+    </script>
+</body>
+</html>

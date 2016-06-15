@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>标签页</title>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../res/jqm-demos.css">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/mylist.js"></script>
+    <link rel="stylesheet" href="http://www.runoob.com/try/demo_source/jqueryui/style.css">
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../res/mylist.css">
+    <script language="JavaScript">
+        if(document.all){
+            window.resizeTo(screen.availWidth,screen.availHeight);
+        }
+    </script>
+    <script id="myTemplate" type="text/x-jquery-tmpl">
+
+    </script>
+    <script>
+        $(function() {
+            $( "#tabs" ).tabs();
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">图文详情</a></li>
+        <li><a href="#tabs-2">详细参数</a></li>
+        <li><a href="#tabs-3"> &nbsp;&nbsp;评价 &nbsp;&nbsp;</a></li>
+    </ul>
+    <div id="tabs-1" data-role="content">
+        <ul data-role="listview">
+            <li><a href="#">Inbox<span class="ui-li-count1">335</span></a></li>
+            <li><a href="#">Sent<span class="ui-li-count1">123</span></a></li>
+            <li><a href="#">Trash<span class="ui-li-count1">7</span></a></li>
+        </ul>
+    </div>
+    <div id="tabs-2">
+        <div data-role="page" id="demo-page" data-title="Inbox" data-url="demo-page">
+                <div data-role="header" data-position="fixed" data-theme="b">
+                    <h1>详细参数</h1>
+                    <a href="#demo-intro" data-rel="back" data-icon="carat-l" data-iconpos="notext">Back</a>
+                    <a href="#" onclick="window.location.reload()" data-icon="back" data-iconpos="notext">Refresh</a>
+                </div><!-- /header -->
+                <div role="main" class="ui-content">
+                    <ul id="list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete">
+                        <li>
+                            <a href="#demo-mail">
+                                <h3>Avery Walker</h3>
+                                <p class="topic"><strong>Re: Dinner Tonight</strong></p>
+                                <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
+                                <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+                            </a>
+                            <a href="#" class="delete">Delete</a>
+                        </li>
+                    </ul>
+                </div><!-- /content -->
+                <div id="confirm" class="ui-content" data-role="popup" data-theme="a">
+                    <p id="question">Are you sure you want to delete:</p>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a id="yes" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Yes</a>
+                        </div>
+                        <div class="ui-block-b">
+                            <a id="cancel" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Cancel</a>
+                        </div>
+                    </div>
+                </div><!-- /popup -->
+        </div>
+    </div>
+    <div id="tabs-3" data-role="content">
+        <ul data-role="listview" id="name_id">
+                <li ><p>腰围:<em></em> </p></li>
+                <li>裙形</li>
+                <li>袖长</li>
+                <li>适合人群</li>
+                <li>场合</li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+
+    var lifeStyle = [
+        {
+            Name: "裙型",
+            DoStyle: "其他",
+        },
+        {
+            Name: "腰型",
+            DoStyle: "高腰"
+        },
+        {
+            Name: "适应人群",
+            DoStyle:"青年/少淑"
+        },
+        {
+            Name: "场合",
+            DoStyle: "工作/约会/休闲"
+        },
+        {
+            Name: "色系",
+            DoStyle: "黑色系"
+        },
+        {
+            Name: "制作工艺",
+            DoStyle: "立体裁剪"
+        },
+        {
+            Name: "花色图案",
+            DoStyle: "纯色"
+        },
+        {
+            Name: "袖长",
+            DoStyle: "短袖"
+        }
+    ];
+
+//    $( "#myTemplate" ).tmpl( lifeStyle )
+//            .appendTo( "#name_id" );
+    //    $("#cart_store_list").loadTemplate("cart_store.tpl",params);
+
+</script>
+
+</body>
+</html>

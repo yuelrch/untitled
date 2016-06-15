@@ -1,0 +1,50 @@
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        我的页面
+    </title>
+</head>
+    <body >
+    <button type="submit" onclick="alert('欢迎')">点我</button>
+    <button type="button" name="我的按钮" value="注册了" onclick="hellobb()">注册了</button>
+    <p id="demo">
+        这里讲改变文字
+    </p>
+    <p id="demo1">
+        从外部获取js</p>
+    <button onclick="myanotherfun()">改变从这里开始</button><br>
+    <img id="myimage" onclick="changeImg()" src="b.png" width="100" height="180">
+    <p> 您好@ <img src="a.jpg"/> 您真任性！！！<img src="a.jpg" border="0" usemap="#planetmap" alt="Planets" /> </p>
+    <map name="planetmap" id="planetmap">
+
+        <area shape="circle" coords="180,139,14" href ="test.html" alt="Venus" />
+
+        <area shape="circle" coords="129,161,10" href ="test.html" alt="Mercury" />
+
+        <area shape="rect" coords="0,0,110,260" href ="test.html" alt="Sun" />
+
+    </map>
+
+    </body>
+    <script src="templete.js"></script>
+
+    <script>
+        function hellobb() {
+            x=document.getElementById("demo");
+            x.innerHTML="hello bb 你这傻瓜";
+
+        }
+        function  changeImg() {
+
+           element =document.getElementById("myimage");
+            if (element.src.match("bullon")){
+                element.src="b.png";
+            }
+            else if (element.src.match("myimage")){
+                element.src ="c.png";
+            }
+        }
+    </script>
+
+</html>
